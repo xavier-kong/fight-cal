@@ -2,3 +2,5 @@ target/
 target-trunk/
 /dist/
 /.log/
+.env
+todo.txt

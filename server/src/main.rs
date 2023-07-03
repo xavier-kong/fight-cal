@@ -75,12 +75,12 @@ async fn main() {
                     .expect("error response"),
             }
         }))
-        .layer(ServiceBuilder::new().layer(TraceLayer::new_for_http()));
+    .layer(ServiceBuilder::new().layer(TraceLayer::new_for_http()));
 
     let sock_addr = SocketAddr::from((
-        IpAddr::from_str(opt.addr.as_str()).unwrap_or(IpAddr::V6(Ipv6Addr::LOCALHOST)),
-        opt.port,
-    ));
+            IpAddr::from_str(opt.addr.as_str()).unwrap_or(IpAddr::V6(Ipv6Addr::LOCALHOST)),
+            opt.port,
+            ));
 
     log::info!("listening on http://{}", sock_addr);
 
